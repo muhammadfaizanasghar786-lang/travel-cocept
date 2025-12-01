@@ -21,7 +21,7 @@ const Home: React.FC = () => {
       location: 'Makkah & Madinah',
       price: 'Contact for Quote',
       days: 15,
-      image: 'https://picsum.photos/id/484/800/600',
+      image: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=800',
       tags: ['Religious', 'All Inclusive']
     },
     {
@@ -30,7 +30,7 @@ const Home: React.FC = () => {
       location: 'United Kingdom',
       price: '$2,400',
       days: 10,
-      image: 'https://picsum.photos/id/1068/800/600',
+      image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800',
       tags: ['Leisure', 'History']
     },
     {
@@ -39,50 +39,67 @@ const Home: React.FC = () => {
       location: 'Istanbul & Cappadocia',
       price: '$1,800',
       days: 7,
-      image: 'https://picsum.photos/id/238/800/600',
+      image: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=800',
       tags: ['Culture', 'Adventure']
     }
   ];
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative h-[600px] sm:h-[700px] flex items-center">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://picsum.photos/id/433/1920/1080" 
-            alt="Travel Background" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/90 to-brand-primary/40"></div>
+      <section className="relative min-h-[600px] sm:h-[700px] flex items-center overflow-hidden">
+        {/* Collage Background */}
+        <div className="absolute inset-0 z-0 grid grid-cols-2 md:grid-cols-4 gap-0">
+            <img 
+              src="https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?auto=format&fit=crop&w=800&q=80" 
+              alt="London" 
+              className="h-full w-full object-cover animate-fade-in"
+            />
+            <img 
+              src="https://images.unsplash.com/photo-1537160503870-9f640b767e45?auto=format&fit=crop&w=800&q=80" 
+              alt="Makkah/Umrah" 
+              className="h-full w-full object-cover animate-fade-in"
+            />
+             <img 
+              src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=80" 
+              alt="Nature/Switzerland" 
+              className="h-full w-full object-cover hidden md:block animate-fade-in"
+            />
+            <img 
+              src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80" 
+              alt="City/New York" 
+              className="h-full w-full object-cover hidden md:block animate-fade-in"
+            />
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/75 to-brand-primary/20 backdrop-blur-[1px]"></div>
         </div>
         
-        <div className="container mx-auto px-4 z-10 relative text-white">
-          <div className="max-w-2xl animate-fade-in">
+        <div className="container mx-auto px-4 z-10 relative text-white py-20 sm:py-0">
+          <div className="max-w-3xl animate-fade-in">
             <div className="flex items-center space-x-2 mb-4">
-              <span className="px-3 py-1 bg-brand-accent/90 rounded-full text-xs font-bold uppercase tracking-wider text-black">
+              <span className="px-3 py-1 bg-brand-accent/90 rounded-full text-xs font-bold uppercase tracking-wider text-black shadow-lg">
                 One Stop Solution
               </span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-6 drop-shadow-lg">
               Your Journey, <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-secondary to-brand-accent">
                 Simplified.
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-8 font-light">
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 font-light drop-shadow-md max-w-lg leading-relaxed">
               Experience the world with Travel Concepts by NS. From spiritual Umrah journeys to exciting international adventures and study visas. Buy yourself the freedom.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 to="/booking" 
-                className="px-8 py-4 bg-brand-primary hover:bg-brand-secondary text-white rounded-full font-bold text-lg transition duration-300 shadow-lg text-center"
+                className="w-full sm:w-auto px-8 py-4 bg-brand-primary hover:bg-brand-secondary text-white rounded-full font-bold text-lg transition duration-300 shadow-xl text-center transform hover:scale-105 active:scale-95"
               >
                 Plan My Trip
               </Link>
               <Link 
                 to="/study-uk" 
-                className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 rounded-full font-bold text-lg transition duration-300 text-center"
+                className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 rounded-full font-bold text-lg transition duration-300 text-center shadow-lg active:scale-95"
               >
                 Study in UK
               </Link>
@@ -92,55 +109,55 @@ const Home: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Services We Offer</h2>
             <div className="w-24 h-1 bg-brand-secondary mx-auto rounded-full"></div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => (
-              <div key={index} className="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-lg hover:border-brand-primary/30 transition duration-300 group">
-                <div className="bg-white w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+              <div key={index} className="p-6 sm:p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-lg hover:border-brand-primary/30 transition duration-300 group">
+                <div className="bg-white w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-3">{index + 1}. {service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
                   {service.desc}
                 </p>
               </div>
             ))}
             {/* 7th item manually added as per flyer text */}
-            <div className="p-8 rounded-2xl bg-brand-primary text-white hover:shadow-lg transition duration-300 flex flex-col justify-center items-center text-center">
+            <div className="p-6 sm:p-8 rounded-2xl bg-brand-primary text-white hover:shadow-lg transition duration-300 flex flex-col justify-center items-center text-center">
                 <h3 className="text-2xl font-bold mb-2">24/7 Services</h3>
-                <p className="text-indigo-100">We are always here to assist you, anytime, anywhere.</p>
+                <p className="text-indigo-100 text-sm sm:text-base">We are always here to assist you, anytime, anywhere.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Popular Packages */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-end mb-12">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 sm:mb-12 gap-4">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Popular Destinations</h2>
-              <p className="text-gray-500">Curated packages for your next adventure.</p>
+              <p className="text-gray-500 text-sm sm:text-base">Curated packages for your next adventure.</p>
             </div>
-            <Link to="/packages" className="hidden md:flex items-center text-brand-primary font-semibold hover:text-brand-secondary transition">
+            <Link to="/packages" className="hidden sm:flex items-center text-brand-primary font-semibold hover:text-brand-secondary transition">
               View All <ArrowRight size={20} className="ml-2" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {featuredPackages.map(pkg => (
               <PackageCard key={pkg.id} pkg={pkg} />
             ))}
           </div>
           
-          <div className="mt-8 md:hidden text-center">
-             <Link to="/packages" className="inline-flex items-center text-brand-primary font-semibold">
+          <div className="mt-8 sm:hidden text-center">
+             <Link to="/packages" className="inline-flex items-center text-brand-primary font-semibold p-2">
               View All Packages <ArrowRight size={20} className="ml-2" />
             </Link>
           </div>
@@ -148,13 +165,13 @@ const Home: React.FC = () => {
       </section>
 
       {/* Banner Strip */}
-      <section className="py-16 bg-gradient-to-r from-brand-secondary to-brand-primary text-white">
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-brand-secondary to-brand-primary text-white">
         <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6">Discover the Spiritual Serenity of Umrah</h2>
-            <p className="max-w-2xl mx-auto mb-8 text-lg text-indigo-100">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Discover the Spiritual Serenity of Umrah</h2>
+            <p className="max-w-2xl mx-auto mb-8 text-base sm:text-lg text-indigo-100">
                 Join our executive solo or family packages. We handle the visa, hotels, and transport so you can focus on worship.
             </p>
-            <Link to="/booking" className="px-8 py-3 bg-white text-brand-primary rounded-full font-bold hover:bg-gray-100 transition shadow-lg">
+            <Link to="/booking" className="inline-block w-full sm:w-auto px-8 py-3 bg-white text-brand-primary rounded-full font-bold hover:bg-gray-100 transition shadow-lg">
                 Book Your Umrah
             </Link>
         </div>

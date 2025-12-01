@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Facebook, Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -9,13 +10,19 @@ const Footer: React.FC = () => {
           
           {/* Brand Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold gradient-text inline-block">Travel Concepts By NS</h3>
+            <Link to="/" className="block mb-4">
+                 <img 
+                  src="https://file-service-alpha.vercel.app/api/file/1741517596041-travel_concept_logo.png" 
+                  alt="Travel Concepts" 
+                  className="h-20 w-auto object-contain bg-white rounded-lg p-2"
+                />
+            </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
               Your one-stop solution for international travel, study visas, and spiritual journeys. 
               Buy Yourself The Freedom.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a href="#" className="text-gray-400 hover:text-brand-secondary transition"><Facebook size={20} /></a>
+              <a href="https://www.facebook.com/travelconceptsbyNS" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#1877F2] transition"><Facebook size={20} /></a>
               <a href="#" className="text-gray-400 hover:text-brand-secondary transition"><Instagram size={20} /></a>
             </div>
           </div>

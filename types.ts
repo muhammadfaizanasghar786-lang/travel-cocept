@@ -19,13 +19,33 @@ export interface BookingFormData {
   fullName: string;
   email: string;
   phone: string;
+  travelers: number;
   destination: string;
-  tripType: 'leisure' | 'adventure' | 'business' | 'cultural' | 'family' | 'religious' | 'study';
+  tripType: string;
   startDate: string;
   duration: number;
-  travelers: number;
-  budget: string;
-  notes: string;
+  accommodation: string; // 'luxury' | 'mid_range' | 'budget'
+  interests: string[];   // Array of selected interests
+  budgetRange: string;   // 'economy' | 'mid' | 'premium' | 'luxury'
+  comments: string;
+}
+
+export interface StudyAssessmentFormData {
+  fullName: string;
+  email: string;
+  phone: string;
+  city: string;
+  currentEducationLevel: string;
+  desiredQualification: string;
+  fieldOfStudy: string;
+  relevantExperience: string;
+  destinationCountry1: string;
+  destinationCountry2: string;
+  languageTestStatus: string;
+  languageTestType: string;
+  targetIntakeYear: string;
+  inquirySubject: string;
+  messageDetails: string;
 }
 
 export interface ChatMessage {

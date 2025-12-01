@@ -5,9 +5,9 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import StudyUK from './pages/StudyUK';
 import Booking from './pages/Booking';
+import StudyAssessment from './pages/StudyAssessment';
 import PackageCard from './components/PackageCard'; // Importing to reuse for package list view if needed
 import { Package } from './types';
-import AiAssistant from './components/AiAssistant';
 
 // Wrapper to scroll to top on route change
 const ScrollToTop = () => {
@@ -52,11 +52,11 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/study-uk" element={<StudyUK />} />
             <Route path="/booking" element={<Booking />} />
+            <Route path="/study-assessment" element={<StudyAssessment />} />
             <Route path="/packages" element={<PackagesPage />} />
           </Routes>
         </main>
         <Footer />
-        <AiAssistant />
       </div>
     </Router>
   );
